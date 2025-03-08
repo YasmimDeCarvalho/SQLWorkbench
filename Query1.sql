@@ -65,3 +65,5 @@ SELECT StudentName, StudentDiscipline FROM student WHERE StudentID = 1006;
 SELECT * FROM book WHERE BookCategoryId >=3;
 
 #-----------------------------------EndOfHomework1------------------------------------#
+
+
