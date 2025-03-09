@@ -68,3 +68,24 @@ SELECT * FROM employees WHERE firstName LIKE 'L%e'; -- > employees whose firstNa
 SELECT * FROM customers WHERE customerName LIKE '%la%'; -- > customers whose customerName has 'la' anywhere
 SELECT * FROM customers WHERE contactFirstName LIKE 'J_n'; -- > Theres just ONE letter between J and n
 SELECT * FROM customers WHERE phone LIKE '%5555'; -- > phone number that ENDS with 5555;
+
+				#----------------------------Homework02--------------------------#
+-- 1. Display all employees whose last name ends with ‘n’.
+SELECT * FROM employees WHERE lastName LIKE '%n';
+
+-- 2. Display all offices that are not located in USA.
+SELECT * FROM offices WHERE country != 'USA';
+
+-- 3. Verify all orders that was shipped from January 1st of 2004 until December 31st of 2004. Order by ship date.
+SELECT * FROM orders WHERE shippedDate BETWEEN '2004-01-01' AND '2004-12-31' ORDER BY  shippedDate;
+
+-- 4. Display all products that have Ford in their product names and have a buy price greater than 50. 
+# Do not forget to sort products by buy price incrementing.
+SELECT * FROM products WHERE buyPrice >=50 AND productName LIKE '%Ford%';
+
+-- 5. Verify all the employees who report to 1102,1088 or 1143.
+SELECT * FROM employees WHERE reportsTo IN ('1102','1088','1143');
+
+-- 6. How to display contact first name, last name, phone number of customers who don’t have state entered.
+SELECT contactFirstName,contactLastName,phone FROM customers WHERE state IS NULL;
+				#--------------------------EndOfHomework02--------------------------#
